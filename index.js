@@ -8,6 +8,7 @@ import {
   Animated,
   Easing
 } from 'react-native';
+import { isIphoneX } from 'react-native-iphone-x-helper';
 import { Touchable } from './src';
 import { noop } from './src/utils';
 /*
@@ -50,7 +51,8 @@ class SnackbarComponent extends Component {
             {
               backgroundColor: this.props.backgroundColor,
               left: this.props.left,
-              right: this.props.right,  
+              right: this.props.right,
+              paddingBottom: (this.props.position==="bottom" && isIphoneX()) ? 22 : 0,
             },
             this.props.position==="bottom"?{bottom: this.state.translateValue.interpolate({inputRange: [0, 1], outputRange: [this.state.hideDistance*-1, 0]})}:
               {top: this.state.translateValue.interpolate({inputRange: [0, 1], outputRange: [this.state.hideDistance*-1,0]})},

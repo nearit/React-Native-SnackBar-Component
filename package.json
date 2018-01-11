@@ -36,7 +36,8 @@
   },
   "peerDependencies": {
     "react": ">=15.3.1",
-    "react-native": "*"
+    "react-native": "*",
+    "react-native-iphone-x-helper": "^1.0.2"
   },
   "dependencies": {
     "prop-types": "^15.6.0"
